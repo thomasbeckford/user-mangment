@@ -7,7 +7,7 @@ export default async function Home() {
   const personas = await getPersonas()
   console.log(personas)
 
-  const { rows } = await sql`SELECT * from CARTS`
+  const { rows } = await sql`SELECT * from PERSONAS`
 
   console.log('Rows', rows)
 
