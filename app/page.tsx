@@ -1,16 +1,10 @@
 import PersonasList from './components/PersonasList'
 import PersonaAdd from './components/PersonaAdd'
+import type { UserProps } from './types'
 import { getPersonas } from './utils/get-personas'
-import { sql } from '@vercel/postgres'
 
 export default async function Home() {
-  const personas = await getPersonas()
-  console.log(personas)
-
-  const { rows } = await sql`SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES`
-
-  console.log('Rows', rows)
-
+  const rows = await getPersonas()
   return (
     <main>
       <h1 className="py-4 text-5xl font-bold text-center w-full">
@@ -18,24 +12,15 @@ export default async function Home() {
       </h1>
 
       <PersonaAdd />
-      {personas.map(
-        ({
-          id,
-          title,
-          thumbnailUrl,
-        }: {
-          id: number
-          title: string
-          thumbnailUrl: string
-        }) => (
-          <PersonasList
-            key={id}
-            id={id}
-            title={title}
-            thumbnailUrl={thumbnailUrl}
-          />
-        )
-      )}
+      {rows?.map(({ id, name, image, email }: UserProps) => (
+        <PersonasList
+          key={id}
+          id={id}
+          name={name}
+          image={image}
+          email={email}
+        />
+      ))}
     </main>
   )
 }

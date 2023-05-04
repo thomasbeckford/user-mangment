@@ -12,12 +12,10 @@ const Navbar = () => {
               <Link href="/">
                 <Image
                   className="h-8 w-auto"
-                  src="/logo.svg"
+                  src="/vercel.svg"
                   alt="Logo"
                   width={20}
                   height={20}
-                  placeholder="blur"
-                  blurDataURL="/logo.svg"
                 />
               </Link>
             </div>
@@ -30,10 +28,10 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              href="/about"
+              href="/actividades"
               className="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
             >
-              About
+              Actividades
             </Link>
           </div>
         </div>
