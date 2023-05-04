@@ -1,0 +1,45 @@
+{
+  "name": "new-roman",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^4.16.4",
+    "@prisma/client": "^4.11.0",
+    "@tanstack/react-query": "^4.28.0",
+    "@trpc/client": "^10.18.0",
+    "@trpc/next": "^10.18.0",
+    "@trpc/react-query": "^10.18.0",
+    "@trpc/server": "^10.18.0",
+    "@vercel/postgres": "^0.1.3",
+    "framer-motion": "^10.12.7",
+    "next": "13.3.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.21.3",
+    "@types/node": "18.16.3",
+    "@types/prettier": "^2.7.2",
+    "@types/react": "18.2.1",
+    "@types/react-dom": "18.2.2",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.4",
+    "postcss": "8.4.23",
+    "prettier": "^2.8.6",
+    "prettier-plugin-tailwindcss": "^0.2.6",
+    "prisma": "^4.11.0",
+    "superjson": "1.12.2",
+    "tailwindcss": "^3.3.0",
+    "typescript": "5.0.4",
+    "zod": "^3.21.4"
+  }
+}
