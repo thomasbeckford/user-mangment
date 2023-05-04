@@ -7,7 +7,7 @@ export default async function Home() {
   const personas = await getPersonas()
   console.log(personas)
 
-  const { rows } = await sql`SELECT * from PERSONAS`
+  const { rows } = await sql`SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES`
 
   console.log('Rows', rows)
 
