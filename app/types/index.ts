@@ -1,7 +1,13 @@
 export type UserProps = {
-  id?: number
+  id: number
   name: string
-  email?: string
-  image?: string
+  email: string
+  image: string
   createdAt?: string
+}
+
+export type CreateUserProps = {
+  name: string
+  email: string
+  image?: string
 }

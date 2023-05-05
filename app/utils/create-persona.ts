@@ -1,6 +1,6 @@
-import type { UserProps } from '../types'
+import type { CreateUserProps } from '../types'
 
-export async function createPersona(persona: UserProps) {
+export async function createPersona(persona: CreateUserProps) {
   console.log(persona)
 
   const response = await fetch('/api/users', {
