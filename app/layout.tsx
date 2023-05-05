@@ -1,6 +1,7 @@
 import './globals.css'
 import { Poppins } from 'next/font/google'
 import Navbar from './components/Navbar'
+import 'react-toastify/dist/ReactToastify.css'
 
 const poppins = Poppins({
   weight: ['400', '700'],

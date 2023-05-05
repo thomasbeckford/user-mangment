@@ -4,8 +4,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+
   images: {
-    domains: ['pbs.twimg.com'],
+    domains: ['pbs.twimg.com', 'picsum.photos', 'uploadthing.com'],
   },
 }
 

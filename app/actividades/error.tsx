@@ -9,7 +9,7 @@ export default function Error({
 }) {
   return (
     <div>
-      <h1>Hubo un error en los usuarios</h1>
+      <h1>Hubo un error en las actividades</h1>
       <p>{error.message}</p>
       <button onClick={reset}>Reset</button>
     </div>

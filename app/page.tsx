@@ -1,5 +1,5 @@
 import PersonasList from './components/PersonasList'
-import PersonaAdd from './components/PersonaAdd'
+import PersonaAdd from './components/AddPersona'
 import type { UserProps } from './types'
 import { getPersonas } from './utils/get-personas'
 

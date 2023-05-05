@@ -3,13 +3,9 @@ import Image from 'next/image'
 import { getPersona } from '../utils/get-persona'
 import { getPersonas } from '../utils/get-personas'
 
-// generateStaticParams will generate all the possible paths for this page
-// and will be used by the static site generator to generate the static pages
-// for this page.
 export async function generateStaticParams() {
   const rows = await getPersonas()
-
-  return rows.map(({ id }: { id: number }) => ({
+  return rows.map(({ id }) => ({
     params: {
       persona: `${id}`,
     },
@@ -54,14 +50,15 @@ export default async function PersonasDetail({
 
       <div className="space-y-4 mt-6">
         <h1 className="text-2xl">{data.name}</h1>
-
-        <Image
-          className="rounded-md"
-          src={data.image}
-          alt={data.name}
-          width={300}
-          height={300}
-        />
+        {data.image && (
+          <Image
+            className="rounded-md"
+            src={data.image}
+            alt={data.name}
+            width={300}
+            height={300}
+          />
+        )}
       </div>
     </>
   )
