@@ -5,13 +5,17 @@ import DeletePersonButton from '@/components/DeletePersonButton'
 import UpdatePersonaButton from '@/components/UpdatePersonaButton'
 import PersonaForm from '@/personas/PersonaForm'
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<
+  { params: { persona: string } }[]
+> {
   const rows = await getPersonas()
-  return rows?.map(({ id }) => ({
-    params: {
-      persona: `${id}`,
-    },
-  }))
+  return (
+    rows?.map(({ id }) => ({
+      params: {
+        persona: `${id}`,
+      },
+    })) || []
+  )
 }
 
 export async function generateMetadata({
