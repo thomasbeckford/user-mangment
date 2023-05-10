@@ -1,10 +1,13 @@
-// components/Navbar.tsx
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { ToastContainer } from 'react-toastify'
 
 const Navbar = () => {
   return (
     <nav className="bg-blue-950 rounded-md">
+      <ToastContainer />
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">

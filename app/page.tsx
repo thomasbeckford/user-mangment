@@ -1,7 +1,7 @@
-import PersonasList from './components/PersonasList'
-import PersonaAdd from './components/AddPersona'
-import type { UserProps } from './types'
-import { getPersonas } from './utils/get-personas'
+import Personas from '@/personas/page'
+import type { UserProps } from '@/types'
+import { getPersonas } from '@/utils/queries/get-personas'
+import Link from 'next/link'
 
 export default async function Home() {
   const rows = await getPersonas()
@@ -11,16 +11,18 @@ export default async function Home() {
         Instituto Roman Rosell
       </h1>
 
-      <PersonaAdd />
-      {rows?.map(({ id, name, image, email }: UserProps) => (
-        <PersonasList
-          key={id}
-          id={id}
-          name={name}
-          image={image}
-          email={email}
-        />
-      ))}
+      <Link
+        href="/personas/create"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Agregar Persona
+      </Link>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 my-5">
+        {rows?.map(({ id, name, image, email }: UserProps) => (
+          <Personas key={id} id={id} name={name} image={image} email={email} />
+        ))}
+      </div>
     </main>
   )
 }

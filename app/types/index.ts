@@ -2,11 +2,12 @@ export type UserProps = {
   id: number
   name: string
   email: string
-  image: string
+  image: string | null
   createdAt?: string
 }
 
-export type CreateUserProps = {
+export type MutateUserProps = {
+  id: number | undefined
   name: string
   email: string
   image?: string
