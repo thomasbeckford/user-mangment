@@ -18,7 +18,7 @@ type FormValues = {
   id: number | undefined
   email: string
   name: string
-  image: File | string | undefined
+  image: File | string | null | undefined
 }
 const allowedFileTypes = ['image/jpeg', 'image/png']
 
@@ -71,8 +71,6 @@ const PersonaForm = (props: Props) => {
     if (data.image instanceof File) {
       const response = await uploadFiles([data.image], 'imageUploader')
 
-      console.log('UPLOAD', response)
-
       if (response[0].fileUrl) {
         imageUrl = response[0].fileUrl
       }
@@ -84,6 +82,8 @@ const PersonaForm = (props: Props) => {
       name: data.name,
       image: imageUrl,
     }
+
+    console.log('Creating persona', newData)
 
     const res = await createOrUpdatePersona(newData)
 
@@ -197,9 +197,9 @@ const PersonaForm = (props: Props) => {
                   <Image
                     src={imagePreview}
                     alt="Preview"
-                    className="hover:opacity-50 rounded-full object-contain"
-                    width={500}
-                    height={500}
+                    className="hover:opacity-50 rounded-full object-cover"
+                    width={250}
+                    height={250}
                   />
                 ) : (
                   <p className="text-gray-500 text-center">
